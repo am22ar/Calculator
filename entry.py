@@ -1,0 +1,22 @@
+import tkinter
+from tkinter import messagebox
+root=tkinter.Tk()
+root.title("entry example")
+name_var=tkinter.StringVar()
+pass_var=tkinter.StringVar()
+def login():
+    name=name_var.get()
+    pass1=pass_var.get()
+    print("username: ",name)
+    print("password: ",pass1)
+name_lbl=tkinter.Label(root, text="username",font=('calibre',10,'bold'))
+name_ent=tkinter.Entry(root, textvariable=name_var, font=('calibre',10,'bold'))
+pass_lbl=tkinter.Label(root, text="password",font=('calibre',10,'bold'))
+pass_ent=tkinter.Entry(root, textvariable=pass_var, font=('calibre',10,'bold'))
+sub_btn=tkinter.Button(root, text="submit", activebackground="pink",activeforeground="blue",font=('calibre',10,'bold'), command=login)
+name_lbl.grid(row=0, column=0)
+name_ent.grid(row=0, column=2)
+pass_lbl.grid(row=2, column=0)
+pass_ent.grid(row=2, column=2)
+sub_btn.grid(row=3, column=1)
+root.mainloop()
